@@ -1,6 +1,11 @@
+"use client";
 export default function Home() {
-  const quote = "القهوة ليست مجرد مشروب، إنها لحظة هدوء.";
-
+  const quotes = [
+  "القهوة ليست مجرد مشروب، إنها لحظة هدوء.",
+  "ابدأ يومك بابتسامة وفنجان قهوة.",
+  "كل لحظة جميلة تبدأ بقهوة.",
+  "خذ استراحة، واستمتع بلحظتك."
+];
   return (
     <main className="min-h-screen flex items-center justify-center bg-[#f7f2ed] p-6">
       <div className="text-center max-w-md">
@@ -15,7 +20,7 @@ export default function Home() {
         </div>
 
         <p className="text-xl italic text-gray-700">
-          "{quote}"
+          "{quotes}"
         </p>
       </div>
     </main>
