@@ -1,9 +1,13 @@
+import BottomNav from "@/components/navigation/BottomNav";
 import type { Metadata } from "next";
+
 import {
   Alexandria,
   Plus_Jakarta_Sans,
 } from "next/font/google";
 import "./globals.css";
+
+import { AuthProvider } from "@/components/auth/AuthProvider";
 
 const alexandria = Alexandria({
   subsets: ["arabic"],
@@ -36,7 +40,10 @@ export default function RootLayout({
       className={`${alexandria.variable} ${jakarta.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-white font-[var(--font-arabic)]">
-        {children}
+       <AuthProvider>
+  {children}
+  <BottomNav />
+</AuthProvider>
       </body>
     </html>
   );
