@@ -5,6 +5,7 @@ import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
+import { Readex_Pro } from "next/font/google";
 
 const menus = [
   "/menu/menu2.jpg",
@@ -18,13 +19,18 @@ const menus = [
 
 // تجهيز قائمة الصور لمكتبة Lightbox
 const slides = menus.map((src) => ({ src }));
-
+const readex = Readex_Pro({
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 export default function MenuPage() {
   const [index, setIndex] = useState(-1);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-lavaza-blue via-[#16284a] to-[#0d1830] text-white dir-rtl">
-
+<main
+  className={`${readex.className} min-h-screen bg-gradient-to-b from-lavaza-blue via-[#16284a] to-[#0d1830] text-white dir-rtl`}
+>
       {/* ================= Header ================= */}
       <header className="bg-[#102040]/85 border-b border-white/10 backdrop-blur-xl">
         <div className="max-w-md mx-auto px-6 pt-6 pb-4 text-center">
